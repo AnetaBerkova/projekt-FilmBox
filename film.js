@@ -104,3 +104,50 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+// 5
+const filmId = location.hash.substring(1)
+
+const vybranyFilm = filmy.find(film => film.id === filmId)
+
+if (vybranyFilm) {
+    const detailFilmu = document.getElementById('detail-filmu')
+    const plakatImg = detailFilmu.querySelector('.img-fluid')
+    if (plakatImg) {
+    plakatImg.src = vybranyFilm.plakat.url
+    plakatImg.width = vybranyFilm.plakat.sirka
+    plakatImg.height = vybranyFilm.plakat.vyska} 
+	else {console.error('Obrázek nebyl nalezen.')}
+    
+const nazevFilmu = detailFilmu.querySelector('.card-title')
+if (nazevFilmu) {
+    nazevFilmu.textContent = vybranyFilm.nazev} 
+	else {console.error('Element s třídou .card-title nebyl nalezen.')}
+    
+const dlouhyPopisFilmu = detailFilmu.querySelector('.card-text')
+if (dlouhyPopisFilmu) {
+    dlouhyPopisFilmu.textContent = vybranyFilm.popis} 
+	else {console.error('Element s třídou .card-text nebyl nalezen.')}} 
+
+
+
+
+
+// 8
+const noteForm = document.querySelector('#note-form')
+
+noteForm.addEventListener('submit', function (event) {
+event.preventDefault()
+   
+const messageInput = document.querySelector('#message-input')
+   	if (messageInput.value.trim() === '') {messageInput.classList.add('is-invalid')} 
+	else {messageInput.classList.remove('is-invalid')
+const termsCheckbox = document.querySelector('#terms-checkbox') 
+	if (!termsCheckbox.checked) {termsCheckbox.classList.add('is-invalid')} 
+	else {termsCheckbox.classList.remove('is-invalid')
+		const odstavec = document.createElement('p')
+		odstavec.classList.add('card-text')
+		odstavec.textContent = messageInput.value
+		noteForm.replaceWith(odstavec)}
+	   }
+	 })
