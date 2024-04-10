@@ -122,12 +122,12 @@ if (vybranyFilm) {
 const nazevFilmu = detailFilmu.querySelector('.card-title')
 if (nazevFilmu) {
     nazevFilmu.textContent = vybranyFilm.nazev} 
-	else {console.error('Element s třídou .card-title nebyl nalezen.')}
+	else {console.error('Název nebyl nalezen.')}
     
 const dlouhyPopisFilmu = detailFilmu.querySelector('.card-text')
 if (dlouhyPopisFilmu) {
     dlouhyPopisFilmu.textContent = vybranyFilm.popis} 
-	else {console.error('Element s třídou .card-text nebyl nalezen.')}} 
+	else {console.error('Popis nebyl nalezen.')}} 
 
 
 

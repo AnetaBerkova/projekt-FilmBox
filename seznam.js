@@ -124,6 +124,7 @@ const filmHTML = `
     </div>
     </div>
     `
-divCol.innerHTML = filmHTML
-seznamFilmu.appendChild(divCol)})
+	divCol.innerHTML = filmHTML
+	seznamFilmu.appendChild(divCol)
+})
 
